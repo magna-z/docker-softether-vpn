@@ -1,11 +1,11 @@
-FROM alpine:3.7
+FROM alpine:3.11
 
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
-    SOFTETHER_VPN_VERSION=4.25 \
-    SOFTETHER_VPN_BUILD=9656 \
+    SOFTETHER_VPN_VERSION=4.29 \
+    SOFTETHER_VPN_BUILD=9680 \
     SOFTETHER_VPN_RELEASE_LABEL=rtm \
-    SOFTETHER_VPN_RELEASE_DATE=2018.01.15
+    SOFTETHER_VPN_RELEASE_DATE=2019.02.28
 
 RUN set -ex && \
     apk add --no-cache \
@@ -29,4 +29,4 @@ RUN set -ex && \
     apk del --purge build-deps && \
     rm -rf /tmp/*
 
-CMD ["vpnserver", "execsvc"]
+ENTRYPOINT ["vpnserver", "execsvc"]

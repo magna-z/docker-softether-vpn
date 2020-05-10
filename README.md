@@ -1,5 +1,5 @@
 [SoftEther VPN Project](https://www.softether.org)
-==================================================
+---
 
 Based on Alpine Linux.
 
@@ -9,7 +9,7 @@ Documentation:
  - [vpnbridge](https://www.softether.org/4-docs/1-manual/5._SoftEther_VPN_Bridge_Manual)
  - [vpncmd](https://www.softether.org/4-docs/1-manual/6._Command_Line_Management_Utility_Manual)
 
-Current version: **4.25, Build 9656, rtm**
+Current version: **4.29, build 9680, rtm**
 
 ### Prepare and run (with directory "/var/docker/softether-vpn" as example)
 ```bash
@@ -29,5 +29,5 @@ docker run -d \
     -v $PWD/packet_log:/usr/vpnserver/packet_log:rw \
     -v $PWD/security_log:/usr/vpnserver/security_log:rw \
     -v $PWD/server_log:/usr/vpnserver/server_log:rw \
-    magnaz/softether-vpn:4.25-9656
+    magnaz/softether-vpn
 ```
