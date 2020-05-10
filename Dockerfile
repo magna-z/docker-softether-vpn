@@ -10,8 +10,8 @@ ENV LANG=en_US.UTF-8 \
 RUN set -ex && \
     apk add --no-cache \
         ca-certificates \
-        libcrypto1.0 \
-        libssl1.0 \
+        libcrypto1.1 \
+        libssl1.1 \
         readline && \
     apk add --no-cache --virtual build-deps \
         gcc \
@@ -21,11 +21,12 @@ RUN set -ex && \
         ncurses-dev \
         openssl-dev \
         readline-dev \
-        wget && \
+        wget \
+        zlib-dev && \
     wget -qO- http://www.softether-download.com/files/softether/v$SOFTETHER_VPN_VERSION-$SOFTETHER_VPN_BUILD-$SOFTETHER_VPN_RELEASE_LABEL-$SOFTETHER_VPN_RELEASE_DATE-tree/Source_Code/softether-src-v$SOFTETHER_VPN_VERSION-$SOFTETHER_VPN_BUILD-$SOFTETHER_VPN_RELEASE_LABEL.tar.gz | tar -xzf - -C /tmp && \
     cd /tmp/v$SOFTETHER_VPN_VERSION-$SOFTETHER_VPN_BUILD && \
     ./configure && make install && \
-    cd /tmp \
+    cd / \
     apk del --purge build-deps && \
     rm -rf /tmp/*
 
